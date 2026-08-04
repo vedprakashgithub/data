@@ -7,10 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api", require("./routes/health"));
-app.use("/api", require("./routes/create-order"));
-app.use("/api", require("./routes/verify-payment"));
-app.use("/api", require("./routes/free-enrollment"));
+app.use("/api", require(".api/health"));
+app.use("/api", require(".api/create-order"));
+app.use("/api", require(".api/verify-payment"));
+app.use("/api", require(".api/free-enrollment"));
 
 const PORT = process.env.PORT || 5000;
 
