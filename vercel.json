@@ -1,15 +1,16 @@
 {
   "version": 2,
   "functions": {
-    "api/*.js": {
+    "api/index.js": {
+      "runtime": "@vercel/node",
       "memory": 512,
       "maxDuration": 30
     }
   },
   "routes": [
-    { "src": "/api/health", "dest": "/api/health.js" },
-    { "src": "/api/create-order", "dest": "/api/create-order.js" },
-    { "src": "/api/verify-payment", "dest": "/api/verify-payment.js" },
-    { "src": "/api/free-enrollment", "dest": "/api/free-enrollment.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.js"
+    }
   ]
 }
