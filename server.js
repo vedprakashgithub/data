@@ -16,7 +16,7 @@ app.set("trust proxy", 1);
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
+      "http://localhost:5173","https://lms.codingcube.online",
       process.env.CLIENT_URL,
     ].filter(Boolean),
     credentials: true,
